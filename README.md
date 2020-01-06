@@ -7,16 +7,15 @@ For start:
 2. Copy to MediaConverter.Service folder
 3. Build
 
-/api/convert
-POST application/json
-{
-  "data": "?", // byte[] with source file data,
-  "inFormat":"wav", // input format
-  "inFormat":"mp3" // out format
+/api/convert<br>
+POST application/json<br>
+{ <br>
+  "data": "?", // byte[] with source file data <br>
+  "inFormat":"wav", // input format <br>
+  "inFormat":"mp3" // out format <br>
 }
-
-response
-{
-  "data": "?", // byte[] with target file data,
-  "inFormat":"mp3" // out format
+<br>response<br>
+{<br>
+  "data": "?", // byte[] with target file data <br>
+  "inFormat":"mp3" // out format <br>
 }
