@@ -30,6 +30,7 @@ namespace MediaConverter.Service
             GlobalConfiguration.Configuration.DependencyResolver =
                 new SimpleInjectorWebApiDependencyResolver(container);
 
+            _log.Info("Service started");
         }
     }
 }

@@ -42,7 +42,6 @@ namespace MediaConverter.Service.Controllers
             catch (Exception ex)
             {
                 _log?.Error($"{nameof(ConverterController)} {nameof(Convert)} ({convertRequest.InFormat}, {convertRequest.OutFormat}) error: {ex.Message} {ex.InnerException?.Message}");
-                Debug.WriteLine(ex.Message);
                 return Request.CreateResponse(System.Net.HttpStatusCode.InternalServerError, new { ex.Message });
             }
         }

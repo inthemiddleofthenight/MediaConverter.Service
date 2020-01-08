@@ -35,7 +35,7 @@ namespace MediaConverter.Service.Tests.Controllers
                 string content = result.Content.ReadAsStringAsync().Result;
                 ConvertRequest convertRequest = JsonConvert.DeserializeObject<ConvertRequest>(content);
 
-                Assert.IsTrue((convertRequest?.Data?.Length ?? 0) != 0);
+                Assert.IsNotNull(convertRequest?.Data);
             }
             // Действие
         }

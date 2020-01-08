@@ -143,6 +143,7 @@
     <Content Include="favicon.ico" />
     <Content Include="ffmpeg.exe" />
     <Content Include="Global.asax" />
+    <Content Include="TempAudio\tempaudio.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -153,10 +154,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="TempAudio\" />
+    <Folder Include="Logs\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MediaConverter.FFMPEGProvider\MediaConverter.FFMPEGProvider.csproj">

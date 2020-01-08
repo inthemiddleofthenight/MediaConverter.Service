@@ -32,7 +32,12 @@ namespace MediaConverter.FFMPEGProvider
                 File.WriteAllBytes(sourceFile, source);
                 await Task.Run(() =>
                 {
-                    Process process = Process.Start(Path.Combine(HostingEnvironment.ApplicationPhysicalPath, _ffmpegPath), $"-i {sourceFile} {targetFile}");
+                    ProcessStartInfo processStartInfo = new ProcessStartInfo();
+                    processStartInfo.FileName = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, _ffmpegPath);
+                    processStartInfo.Arguments = $"-i {sourceFile} {targetFile}";
+                    processStartInfo.UseShellExecute = false;
+                    Process process = Process.Start(processStartInfo);
+                    _log?.Info($"{nameof(MediaProvider)} {nameof(Convert)} sourceLength: {source.Length}, WorkingSet64: {process.WorkingSet64}, UserProcessorTime: {process.UserProcessorTime}");
                     process.WaitForExit();
                 });
 
